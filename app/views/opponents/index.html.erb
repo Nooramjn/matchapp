@@ -1,0 +1,31 @@
+<h1>Listing opponents</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Skill level</th>
+    <th>Home capacity</th>
+    <th>Domestic</th>
+    <th>Rival</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @opponents.each do |opponent| %>
+  <tr>
+    <td><%= opponent.name %></td>
+    <td><%= opponent.skill_level %></td>
+    <td><%= opponent.home_capacity %></td>
+    <td><%= opponent.domestic %></td>
+    <td><%= opponent.rival %></td>
+    <td><%= link_to 'Show', opponent %></td>
+    <td><%= link_to 'Edit', edit_opponent_path(opponent) %></td>
+    <td><%= link_to 'Destroy', opponent, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Opponent', new_opponent_path %>

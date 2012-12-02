@@ -1,4 +1,12 @@
 Matchapp::Application.routes.draw do
+  resources :opponents
+
+  resources :matches
+
+  resources :tickets
+
+  resources :fans
+
   get "pages/home"
 
   get "pages/about"

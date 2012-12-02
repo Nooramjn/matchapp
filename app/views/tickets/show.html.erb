@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @ticket.quantity %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @ticket.type %>
+</p>
+
+<p>
+  <b>Fan:</b>
+  <%= @ticket.fan_id %>
+</p>
+
+<p>
+  <b>Match:</b>
+  <%= @ticket.match_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %>
