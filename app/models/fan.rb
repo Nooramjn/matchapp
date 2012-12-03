@@ -1,6 +1,6 @@
 class Fan < ActiveRecord::Base
 
-  attr_accessible :name  :email
+  attr_accessible :name, :email
 
 	has_many :tickets
 

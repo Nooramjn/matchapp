@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Type</th>
+    <th>Match type</th>
     <th>Home</th>
     <th>Opponent</th>
     <th></th>
@@ -12,7 +12,7 @@
 
 <% @matches.each do |match| %>
   <tr>
-    <td><%= match.type %></td>
+    <td><%= match.match_type %></td>
     <td><%= match.home %></td>
     <td><%= match.opponent_id %></td>
     <td><%= link_to 'Show', match %></td>

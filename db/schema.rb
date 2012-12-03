@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202153150) do
+ActiveRecord::Schema.define(:version => 20121202164722) do
 
   create_table "fans", :force => true do |t|
     t.string   "name"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20121202153150) do
   end
 
   create_table "matches", :force => true do |t|
-    t.string   "type"
+    t.string   "match_type"
     t.boolean  "home"
     t.integer  "opponent_id"
     t.datetime "created_at",  :null => false
@@ -40,11 +40,11 @@ ActiveRecord::Schema.define(:version => 20121202153150) do
 
   create_table "tickets", :force => true do |t|
     t.integer  "quantity"
-    t.integer  "type"
+    t.string   "ticket_type"
     t.integer  "fan_id"
     t.integer  "match_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

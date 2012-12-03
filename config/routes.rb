@@ -1,9 +1,9 @@
 Matchapp::Application.routes.draw do
-  resources :opponents
+  resources :tickets
 
   resources :matches
 
-  resources :tickets
+  resources :opponents
 
   resources :fans
 
