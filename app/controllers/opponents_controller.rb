@@ -2,6 +2,7 @@ class OpponentsController < ApplicationController
   # GET /opponents
   # GET /opponents.json
   def index
+    @title = "Opponents"
     @opponents = Opponent.all
 
     respond_to do |format|

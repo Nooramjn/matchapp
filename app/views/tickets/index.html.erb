@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Quantity</th>
-    <th>Type</th>
+    <th>Ticket type</th>
     <th>Fan</th>
     <th>Match</th>
     <th></th>
@@ -14,7 +14,7 @@
 <% @tickets.each do |ticket| %>
   <tr>
     <td><%= ticket.quantity %></td>
-    <td><%= ticket.type %></td>
+    <td><%= ticket.ticket_type %></td>
     <td><%= ticket.fan_id %></td>
     <td><%= ticket.match_id %></td>
     <td><%= link_to 'Show', ticket %></td>

@@ -4,9 +4,9 @@ describe "tickets/show" do
   before(:each) do
     @ticket = assign(:ticket, stub_model(Ticket,
       :quantity => 1,
-      :type => 2,
-      :fan_id => 3,
-      :match_id => 4
+      :ticket_type => "Ticket Type",
+      :fan_id => 2,
+      :match_id => 3
     ))
   end
 
@@ -14,8 +14,8 @@ describe "tickets/show" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/1/)
+    rendered.should match(/Ticket Type/)
     rendered.should match(/2/)
     rendered.should match(/3/)
-    rendered.should match(/4/)
   end
 end

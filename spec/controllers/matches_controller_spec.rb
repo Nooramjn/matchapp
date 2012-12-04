@@ -24,7 +24,10 @@ describe MatchesController do
   # Match. As you add validations to Match, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
+
     { :match_type => "friendly", :home => false, :opponent_id => 1 }
+
+
   end
 
   # This should return the minimal set of values that should be in the session
@@ -89,14 +92,14 @@ describe MatchesController do
       it "assigns a newly created but unsaved match as @match" do
         # Trigger the behavior that occurs when invalid params are submitted
         Match.any_instance.stub(:save).and_return(false)
-        post :create, {:match => { "type" => "invalid value" }}, valid_session
+        post :create, {:match => { "match_type" => "invalid value" }}, valid_session
         assigns(:match).should be_a_new(Match)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Match.any_instance.stub(:save).and_return(false)
-        post :create, {:match => { "type" => "invalid value" }}, valid_session
+        post :create, {:match => { "match_type" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
@@ -110,8 +113,8 @@ describe MatchesController do
         # specifies that the Match created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Match.any_instance.should_receive(:update_attributes).with({ "type" => "" })
-        put :update, {:id => match.to_param, :match => { "type" => "" }}, valid_session
+        Match.any_instance.should_receive(:update_attributes).with({ "match_type" => "MyString" })
+        put :update, {:id => match.to_param, :match => { "match_type" => "MyString" }}, valid_session
       end
 
       it "assigns the requested match as @match" do
@@ -132,7 +135,7 @@ describe MatchesController do
         match = Match.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Match.any_instance.stub(:save).and_return(false)
-        put :update, {:id => match.to_param, :match => { "type" => "invalid value" }}, valid_session
+        put :update, {:id => match.to_param, :match => { "match_type" => "invalid value" }}, valid_session
         assigns(:match).should eq(match)
       end
 
@@ -140,7 +143,7 @@ describe MatchesController do
         match = Match.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Match.any_instance.stub(:save).and_return(false)
-        put :update, {:id => match.to_param, :match => { "type" => "invalid value" }}, valid_session
+        put :update, {:id => match.to_param, :match => { "match_type" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end

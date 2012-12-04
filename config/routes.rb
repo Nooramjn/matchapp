@@ -1,9 +1,9 @@
 Matchapp::Application.routes.draw do
-  resources :opponents
+  resources :tickets
 
   resources :matches
 
-  resources :tickets
+  resources :opponents
 
   resources :fans
 
@@ -14,6 +14,8 @@ Matchapp::Application.routes.draw do
   get "pages/contact"
 
   get "pages/privacy_policy"
+
+  match '/signup',  to: 'fans#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
