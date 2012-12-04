@@ -2,6 +2,7 @@ class MatchesController < ApplicationController
   # GET /matches
   # GET /matches.json
   def index
+    @title = "Matches"
     @matches = Match.all
 
     respond_to do |format|

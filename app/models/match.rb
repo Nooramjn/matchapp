@@ -2,7 +2,7 @@ class Match < ActiveRecord::Base
 
 	attr_accessible :match_type, :home, :opponent_id
 	has_many :tickets
-	belongs_to :opponents
+	belongs_to :match
 
 	validates :match_type, :presence =>true 
 	validates :home , :presence =>true 

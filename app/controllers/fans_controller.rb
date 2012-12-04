@@ -2,6 +2,7 @@ class FansController < ApplicationController
   # GET /fans
   # GET /fans.json
   def index
+    @title = "Fans"
     @fans = Fan.all
 
     respond_to do |format|
