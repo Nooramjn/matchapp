@@ -24,11 +24,8 @@ describe MatchesController do
   # Match. As you add validations to Match, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-<<<<<<< HEAD
-    { "match_type" => "MyString" }
-=======
+
     { :match_type => "friendly", :home => false, :opponent_id => 1 }
->>>>>>> 3a3e8d1e80f15b4ef2bd4eb264f7b7099a4608a9
   end
 
   # This should return the minimal set of values that should be in the session

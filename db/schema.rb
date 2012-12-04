@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-#<<<<<<< HEAD
-#ActiveRecord::Schema.define(:version => 20121202164722) do
-#=======
-ActiveRecord::Schema.define(:version => 20121202164947) do
-#>>>>>>> 3a3e8d1e80f15b4ef2bd4eb264f7b7099a4608a9
+ActiveRecord::Schema.define(:version => 20121204101449) do
 
   create_table "fans", :force => true do |t|
     t.string   "name"
@@ -24,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20121202164947) do
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
   end
+
+  add_index "fans", ["email"], :name => "index_fans_on_email", :unique => true
 
   create_table "matches", :force => true do |t|
     t.string   "match_type"
