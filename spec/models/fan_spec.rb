@@ -14,6 +14,26 @@ describe Fan do
    it { should respond_to(:authenticate) }
   it { should be_valid }
   
+
+  describe "create our factories" do
+  	before (:each) do
+  		@sara= FactoryGirl.create(:fan)
+  		@noora=FactoryGirl.create(:fan,:name =>"Noora")
+  		@hawra=FactoryGirl.create(:fan,:name =>"Hawra", :email => "ha@hotmail.com")
+  	end
+  
+  	it "should create the factories correctly" do
+  		@sara.should be_valid
+  		@noora.should be_valid
+  		@hawra.should be_valid
+  	end
+  
+  it "should have valid attributes"do
+  		@sara.name.should=="Sara"
+  		@noora.name.should=="Noora"
+  		@hawra.name.should=="Hawra"
+  	end
+  
     describe "when password is not present" do
     before { @user.password = @user.password_confirmation = " " }
     it { should_not be_valid }
