@@ -4,7 +4,7 @@ module ApplicationHelper
 	if @title.nil?
 		base_title
 	else
-		"Manchester United FC | #{@title}"
+		" Manchester United FC | #{@title}"
 end
 end
 end

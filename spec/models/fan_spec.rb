@@ -11,6 +11,7 @@ describe Fan do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+<<<<<<< HEAD
    it { should respond_to(:authenticate) }
   it { should be_valid }
   
@@ -36,25 +37,45 @@ describe Fan do
   
     describe "when password is not present" do
     before { @user.password = @user.password_confirmation = " " }
+=======
+  it { should respond_to(:authenticate) }
+  it { should be_valid }
+  
+    describe "when password is not present" do
+    before { @fan.password = @fan.password_confirmation = " " }
+>>>>>>> e0a1c56cead78d1558ab429879ca66bad695e3a0
     it { should_not be_valid }
   end
 
   describe "when password doesn't match confirmation" do
+<<<<<<< HEAD
     before { @user.password_confirmation = "mismatch" }
+=======
+    before { @fan.password_confirmation = "mismatch" }
+>>>>>>> e0a1c56cead78d1558ab429879ca66bad695e3a0
     it { should_not be_valid }
   end
 
   describe "when password confirmation is nil" do
+<<<<<<< HEAD
     before { @user.password_confirmation = nil }
+=======
+    before { @fan.password_confirmation = nil }
+>>>>>>> e0a1c56cead78d1558ab429879ca66bad695e3a0
     it { should_not be_valid }
   end
   
   describe "with a password that's too short" do
+<<<<<<< HEAD
     before { @user.password = @user.password_confirmation = "a" * 5 }
+=======
+    before { @fan.password = @fan.password_confirmation = "a" * 5 }
+>>>>>>> e0a1c56cead78d1558ab429879ca66bad695e3a0
     it { should be_invalid }
   end
 
   describe "return value of authenticate method" do
+<<<<<<< HEAD
     before { @user.save }
     let(:found_user) { User.find_by_email(@user.email) }
 
@@ -67,6 +88,20 @@ describe Fan do
 
       it { should_not == user_for_invalid_password }
       specify { user_for_invalid_password.should be_false }
+=======
+    before { @fan.save }
+    let(:found_user) { Fan.find_by_email(@fan.email) }
+
+    describe "with valid password" do
+      it { should == found_user.authenticate(@fan.password) }
+    end
+
+    describe "with invalid password" do
+      let(:fan_for_invalid_password) { found_user.authenticate("invalid") }
+
+      it { should_not == user_for_invalid_password }
+      specify { fan_for_invalid_password.should be_false }
+>>>>>>> e0a1c56cead78d1558ab429879ca66bad695e3a0
     end
   end
   
@@ -118,6 +153,13 @@ describe Fan do
     it { should_not be_valid }
   end
   
+<<<<<<< HEAD
+=======
+  describe "remember token" do
+    before { @fan.save }
+    its(:remember_token) { should_not be_blank }
+  end
+>>>>>>> e0a1c56cead78d1558ab429879ca66bad695e3a0
   
   describe "when email address is already taken" do
     before do

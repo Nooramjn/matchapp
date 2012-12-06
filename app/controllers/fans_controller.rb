@@ -45,7 +45,8 @@ class FansController < ApplicationController
 
     respond_to do |format|
       if @fan.save
-        format.html { redirect_to @fan, notice: 'Fan was successfully created.' }
+        sign_in @fan
+        format.html { redirect_to @fan, notice: 'Welcome!' }
         format.json { render json: @fan, status: :created, location: @fan }
       else
         format.html { render action: "new" }
