@@ -15,6 +15,8 @@ Matchapp::Application.routes.draw do
 
   get "pages/privacy_policy"
 
+  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

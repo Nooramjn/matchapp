@@ -6,13 +6,27 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+   <link rel="stylesheet" type="text/css" href="application.css" />
 </head>
-<body>
-<%= render 'layouts/header' %>
+	<body>
+		<div id="wrapper">
+
+			<%= render 'layouts/header' %>
+
+			
+			<div id="page">
+				<div id="content">
 
 
-<%= yield %>
-<%= render 'layouts/footer' %>
+					<%= yield %>
+				
+		<div id="footer">
+			
+
+			<%= render 'layouts/footer' %>
+
+		</div>
+
 
 
 </body>
