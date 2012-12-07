@@ -12,7 +12,7 @@ describe Opponent do
   
   describe "create our factories" do
   	before (:each) do
-  		@opponent1=FactoryGirl.create(:opponent, :name=>"GOS", :skill_level=>"Moderate", :home_capacity=>"5543", :domestic=> true, :rival=>false)
+  		@opponent1=FactoryGirl.create(:opponent, :name=>"GOS", :skill_level=>"Moderate", :home_capacity=>"5543", :domestic=> true, :rival=>true)
   		@opponent2=FactoryGirl.create(:opponent)
   	end
   
@@ -20,4 +20,5 @@ describe Opponent do
   		@opponent1.should be_valid
   		@opponent2.should be_valid
   	end
+  end
 end

@@ -39,7 +39,4 @@ private
       self.remember_token = SecureRandom.urlsafe_base64
     end
 
-
->>>>>>> e0a1c56cead78d1558ab429879ca66bad695e3a0
-
 end

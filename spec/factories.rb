@@ -3,8 +3,17 @@ require 'factory_girl'
 FactoryGirl.define do
   
 	factory :fan do
+	#I took this from 9.32 but not sure for what it is?
+	#sequence(:name)  { |n| "Person #{n}" }
+    #sequence(:email) { |n| "person_#{n}@example.com"} 
 		name "Sara"
 		email "sara@hotmail.com"
+		password "foobar"
+    	password_confirmation "foobar"
+    	
+    	factory :admin do
+        admin true
+        end
 		end
 		
 	factory :opponent do	

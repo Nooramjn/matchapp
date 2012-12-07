@@ -24,3 +24,35 @@
 <br />
 
 <%= link_to 'Sign up', new_fan_path %>
+
+<!-- I added this portion from chap. 9.25, but not sure 
+if we have to added or not-->
+
+<!--<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <%= gravatar_for user, size: 52 %>
+      <%= link_to user.name, user %>
+    </li>
+  <% end %>
+</ul>-->
+
+<!--I added this from 9.34 BUT I will not keep it bec. I didnt do pagination 
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <%= gravatar_for user, size: 52 %>
+      <%= link_to user.name, user %>
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate %>-->

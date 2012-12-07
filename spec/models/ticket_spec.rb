@@ -37,4 +37,5 @@ describe Ticket do
   		@noora.should be_valid
   		@hawra.should be_valid
   	end
+  end
 end

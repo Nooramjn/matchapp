@@ -30,4 +30,5 @@ describe Match do
   		@ticket1.should be_valid
   		@ticket2.should be_valid
   	end
+  end
 end
