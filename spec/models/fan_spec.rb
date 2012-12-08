@@ -11,8 +11,45 @@ describe Fan do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+#9.39
+   it { should respond_to(:authenticate) }
+   it { should be_valid }
+   
+   
+  it { should respond_to(:admin) }
   it { should respond_to(:authenticate) }
+
   it { should be_valid }
+  it { should_not be_admin }
+
+  describe "with admin attribute set to 'true'" do
+    before do
+      @fan.save!
+      @fan.toggle!(:admin)
+    end
+
+    it { should be_admin }
+  end
+
+  describe "create our factories" do
+  	before (:each) do
+  		@sara= FactoryGirl.create(:fan)
+  		@noora=FactoryGirl.create(:fan,:name =>"Noora")
+  		@hawra=FactoryGirl.create(:fan,:name =>"Hawra", :email => "ha@hotmail.com")
+  	end
+  
+  	it "should create the factories correctly" do
+  		@sara.should be_valid
+  		@noora.should be_valid
+  		@hawra.should be_valid
+  	end
+  
+  it "should have valid attributes"do
+  		@sara.name.should=="Sara"
+  		@noora.name.should=="Noora"
+  		@hawra.name.should=="Hawra"
+  	end
+end
   
     describe "when password is not present" do
     before { @fan.password = @fan.password_confirmation = " " }
@@ -20,11 +57,13 @@ describe Fan do
   end
 
   describe "when password doesn't match confirmation" do
+
     before { @fan.password_confirmation = "mismatch" }
     it { should_not be_valid }
   end
 
   describe "when password confirmation is nil" do
+
     before { @fan.password_confirmation = nil }
     it { should_not be_valid }
   end
@@ -35,6 +74,7 @@ describe Fan do
   end
 
   describe "return value of authenticate method" do
+
     before { @fan.save }
     let(:found_user) { Fan.find_by_email(@fan.email) }
 
@@ -98,6 +138,7 @@ describe Fan do
     it { should_not be_valid }
   end
   
+
   describe "remember token" do
     before { @fan.save }
     its(:remember_token) { should_not be_blank }

@@ -25,7 +25,11 @@ describe OpponentsController do
   # update the return value of this method accordingly.
   def valid_attributes
     { :name => "UCI", :skill_level=> "moderate", :home_capacity=> 5566,
-    :domestic => false, :rival => false}
+
+    :domestic => 'true', :rival => 'true'}
+
+    #:domestic => false, :rival => false}
+
   end
 
   # This should return the minimal set of values that should be in the session

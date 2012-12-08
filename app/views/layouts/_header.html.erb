@@ -1,5 +1,7 @@
+  <header>
   <div class="navbar-inner">
       <nav>
+      
         <ul class="nav pull-right">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "About", pages_about_path %></li>
@@ -7,9 +9,10 @@
             <li><%= link_to "Opponents", opponents_path %></li>
             <li><%= link_to "Tickets", tickets_path %></li>
             <% if signed_in? %>
-            <li><%= link_to "Fans", fan_path %></li>
-
-            <li>
+            <li><%= link_to "Fans", fans_path %></li>
+                <li><%= link_to "Profile", current_fan %></li>
+                <li><%= link_to "Settings", edit_fan_path(current_fan) %></li>
+                <li>
                   <%= link_to "Sign out", signout_path, method: "delete" %>
                 </li>
               </ul>
