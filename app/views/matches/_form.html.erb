@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :match_type %><br />
-    <%= f.text_field :match_type %>
+    <%= f.select(:match_type, Fan::match_type_list) %>
   </div>
   <div class="field">
     <%= f.label :home %><br />
