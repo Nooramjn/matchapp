@@ -15,13 +15,18 @@
     <td><%= match.match_type %></td>
     <td><%= match.home %></td>
     <td><%= match.opponent_id %></td>
+    new_ticket
+    <% if current_fan.admin? %>
     <td><%= link_to 'Show', match %></td>
     <td><%= link_to 'Edit', edit_match_path(match) %></td>
     <td><%= link_to 'Destroy', match, confirm: 'Are you sure?', method: :delete %></td>
+
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
+<%= link_to 'Buy Tickets', new_ticket_path %>
 
-<%= link_to 'New Match', new_match_path %>
+

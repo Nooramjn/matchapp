@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :ticket_type %><br />
-    <%= f.select(:ticket_type, Fan::ticket_type_list) %>
+    <%= f.select(:ticket_type, Ticket::TICKET_TYPE_LIST) %>
   </div>
   <div class="field">
     <%= f.label :fan_id %><br />

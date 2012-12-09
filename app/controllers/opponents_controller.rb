@@ -1,4 +1,7 @@
 class OpponentsController < ApplicationController
+  before_filter :signed_in_fan, only: [:index,:edit, :update]
+  before_filter :correct_fan,   only: [:edit, :update]
+
   # GET /opponents
   # GET /opponents.json
   def index
@@ -81,4 +84,21 @@ class OpponentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+private
+
+      def signed_in_fan
+      redirect_to signin_url, notice: "Please sign in." unless signed_in?
+    end
+    
+    def correct_fan
+      @fan = Fan.find(params[:id])
+      redirect_to(root_path) unless current_fan?(@fan) || current_fan.admin
+    end
+    
+    def admin_fan
+      redirect_to(root_path) unless current_fan.admin
+    end
+
+
+  
 end
