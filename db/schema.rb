@@ -11,14 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202164722) do
+ActiveRecord::Schema.define(:version => 20121204220412) do
 
   create_table "fans", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "password_digest"
+    t.string   "remember_token"
   end
+
+  add_index "fans", ["email"], :name => "index_fans_on_email", :unique => true
+  add_index "fans", ["remember_token"], :name => "index_fans_on_remember_token"
 
   create_table "matches", :force => true do |t|
     t.string   "match_type"

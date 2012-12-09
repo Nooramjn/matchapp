@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :skill_level %><br />
-    <%= f.text_field :skill_level %>
+    <%= f.select(:skill_level, Fan::skill_level_list) %>
   </div>
   <div class="field">
     <%= f.label :home_capacity %><br />

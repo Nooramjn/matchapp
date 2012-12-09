@@ -2,6 +2,7 @@ class TicketsController < ApplicationController
   # GET /tickets
   # GET /tickets.json
   def index
+    @title = "Tickets"
     @tickets = Ticket.all
 
     respond_to do |format|
@@ -24,6 +25,7 @@ class TicketsController < ApplicationController
   # GET /tickets/new
   # GET /tickets/new.json
   def new
+    @title = "New Ticket"
     @ticket = Ticket.new
 
     respond_to do |format|

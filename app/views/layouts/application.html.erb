@@ -2,7 +2,6 @@
 <html>
 <head>
 <title><%= title %></title>
-  <title>Matchapp</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -20,14 +19,12 @@
 
 					<%= yield %>
 				
-		<div id="footer">
+	<div id="footer">
 			
 
 			<%= render 'layouts/footer' %>
 
-		</div>
-
-
+	</div> 
 
 </body>
 </html>

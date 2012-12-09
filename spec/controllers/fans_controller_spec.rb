@@ -24,7 +24,7 @@ describe FansController do
   # Fan. As you add validations to Fan, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "name" => "MyString" }
+    { :name => "Ali", :email => "ali@hotmail.com"}
   end
 
   # This should return the minimal set of values that should be in the session

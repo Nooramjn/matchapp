@@ -24,7 +24,12 @@ describe OpponentsController do
   # Opponent. As you add validations to Opponent, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "name" => "MyString" }
+    { :name => "UCI", :skill_level=> "moderate", :home_capacity=> 5566,
+
+    :domestic => 'true', :rival => 'true'}
+
+    #:domestic => false, :rival => false}
+
   end
 
   # This should return the minimal set of values that should be in the session
