@@ -14,14 +14,24 @@
   <tr>
     <td><%= match.match_type %></td>
     <td><%= match.home %></td>
-    <td><%= match.opponent_id %></td>
+    <td><%= match.opponent.name %></td>
+    new_ticket
+    <% if admin_fan %>
     <td><%= link_to 'Show', match %></td>
     <td><%= link_to 'Edit', edit_match_path(match) %></td>
     <td><%= link_to 'Destroy', match, confirm: 'Are you sure?', method: :delete %></td>
+
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
+<div id="click"> 
 
-<%= link_to 'New Match', new_match_path %>
+  <a href="/tickets/new"><img src="assets/click.gif" width="230" height="100"></a>
+
+</div>
+
+
+

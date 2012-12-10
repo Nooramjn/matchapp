@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :skill_level %><br />
-    <%= f.text_field :skill_level %>
+    <%= f.select(:skill_level, Opponent::SKILL_LEVEL_TYPE) %>
   </div>
   <div class="field">
     <%= f.label :home_capacity %><br />

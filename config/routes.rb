@@ -17,11 +17,15 @@ Matchapp::Application.routes.draw do
 
   get "pages/privacy_policy"
 
+# <<<<<<< HEAD
+  
+# =======
   match '/signup',  to: 'fans#new'
 
   match '/signin',  to: 'sessions#new'
   
   match '/signout', to: 'sessions#destroy', via: :delete
+# >>>>>>> upstream/master
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

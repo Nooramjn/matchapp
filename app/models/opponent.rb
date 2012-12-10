@@ -6,10 +6,16 @@ class Opponent < ActiveRecord::Base
 	has_many :matches
 
 	validates :name, :presence =>true 
-	validates :skill_level, :presence =>true 
 	validates :home_capacity, :presence =>true 
 	validates :domestic, :presence =>true 
 	validates :rival, :presence =>true 
+
+
+	SKILL_LEVEL_TYPE = [['Elite'], ['Moderate'], ['Underdog']]
+
+	validates_inclusion_of :skill_level, :in => %[Elite Moderate Underdog], 
+	:message => "is not an option", :allow_nil => true, :allow_blank => true
+
 
 
 end
