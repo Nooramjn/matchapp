@@ -7,8 +7,6 @@ class Opponent < ActiveRecord::Base
 
 	validates :name, :presence =>true 
 	validates :home_capacity, :presence =>true 
-	validates :domestic, :presence =>true 
-	validates :rival, :presence =>true 
 
 
 	SKILL_LEVEL_TYPE = [['Elite'], ['Moderate'], ['Underdog']]
