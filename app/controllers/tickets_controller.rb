@@ -27,6 +27,7 @@ class TicketsController < ApplicationController
   # GET /tickets/new
   # GET /tickets/new.json
   def new
+    #@matches = Match.all
     @title = "New Ticket"
     @ticket = Ticket.new
 
@@ -38,12 +39,16 @@ class TicketsController < ApplicationController
 
   # GET /tickets/1/edit
   def edit
+        #@matches = Match.all
+
     @ticket = Ticket.find(params[:id])
   end
 
   # POST /tickets
   # POST /tickets.json
   def create
+        #@matches = Match.all
+
     @ticket = current_fan.tickets.new(params[:ticket])
 
     respond_to do |format|
@@ -93,8 +98,14 @@ private
     end
     
     def correct_fan
-      @fan = Fan.find(params[:id])
-      redirect_to(root_path) unless current_fan?(@fan) || current_fan.admin
+      #@fan = Fan.find(params[:id])
+      #puts @fan.id
+      puts @current_fan.id
+      @ticket = Ticket.find(params[:id])
+      puts @ticket.fan_id
+
+      redirect_to(root_path) unless (@current_fan.id == @ticket.fan_id) || current_fan.admin
+      #current_fan?(@fan) || current_fan.admin
     end
     
     def admin_fan

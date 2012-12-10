@@ -1,5 +1,4 @@
-<h1>Listing matches</h1>
-
+<h1>List of Matches</h1>
 <table>
   <tr>
     <th>Match type</th>
@@ -15,11 +14,12 @@
     <td><%= match.match_type %></td>
     <td><%= match.home %></td>
     <td><%= match.opponent.name %></td>
-    new_ticket
     <% if admin_fan %>
+
     <td><%= link_to 'Show', match %></td>
     <td><%= link_to 'Edit', edit_match_path(match) %></td>
     <td><%= link_to 'Destroy', match, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'New match', new_match_path %></td>
 
     <% end %>
   </tr>

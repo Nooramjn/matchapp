@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :match_id %><br />
-    <%= f.collection_select :match_id, @matches, :id, :match_type %>
+    <%= f.collection_select :match_id, Match.all, :id, :match_type %>
   </div>
   <div class="actions">
     <%= f.submit %>
