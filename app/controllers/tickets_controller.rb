@@ -27,7 +27,7 @@ class TicketsController < ApplicationController
   # GET /tickets/new
   # GET /tickets/new.json
   def new
-    @matches = Match.all
+    #@matches = Match.all
     @title = "New Ticket"
     @ticket = Ticket.new
 
@@ -39,7 +39,7 @@ class TicketsController < ApplicationController
 
   # GET /tickets/1/edit
   def edit
-        @matches = Match.all
+        #@matches = Match.all
 
     @ticket = Ticket.find(params[:id])
   end
@@ -47,7 +47,7 @@ class TicketsController < ApplicationController
   # POST /tickets
   # POST /tickets.json
   def create
-        @matches = Match.all
+        #@matches = Match.all
 
     @ticket = current_fan.tickets.new(params[:ticket])
 
