@@ -20,12 +20,8 @@
     <%= f.select(:ticket_type, Ticket::TICKET_TYPE_LIST) %>
   </div>
   <div class="field">
-    <%= f.label :fan_id %><br />
-    <%= f.number_field :fan_id %>
-  </div>
-  <div class="field">
     <%= f.label :match_id %><br />
-    <%= f.number_field :match_id %>
+    <%= f.collection_select :match_id, @matches, :id, :match_type %>
   </div>
   <div class="actions">
     <%= f.submit %>

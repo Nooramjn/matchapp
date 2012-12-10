@@ -19,15 +19,15 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
-  <div class="field">>
+  <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password %>
   </div>
-  <div class="field">>
+  <div class="field">
     <%= f.label :password_confirmation, "Confirmation" %><br />
     <%= f.password_field :password_confirmation %>
   </div>
-  <% if current_fan.admin %>
+  <% if admin_fan %>
     <div class="field">>
     <%= f.label :admin %><br />
     <%= f.check_box :admin %>

@@ -1,5 +1,5 @@
 class MatchesController < ApplicationController
-before_filter :signed_in_fan, only: [:index,:edit, :update]
+before_filter :signed_in_fan, only: [:edit, :update]
 before_filter :correct_fan,   only: [:edit, :update]
 
   # GET /matches

@@ -19,7 +19,7 @@
     <td><%= opponent.home_capacity %></td>
     <td><%= opponent.domestic %></td>
     <td><%= opponent.rival %></td
-    <% if current_fan.admin? %>
+    <% if admin_fan %>
     <td><%= link_to 'Show', opponent %></td>
     <td><%= link_to 'Edit', edit_opponent_path(opponent) %></td>
     <td><%= link_to 'Destroy', opponent, confirm: 'Are you sure?', method: :delete %></td>
