@@ -10,9 +10,9 @@ class Ticket < ActiveRecord::Base
 	validates :match_id, :presence =>true 
 
 
-	TICKET_TYPE_LIST = [['Premier League Ticket'], ['Champions League Ticket'],['Europe League Ticket'], ['League Cup Ticket'], ['FA Cup Ticket']]
+	TICKET_TYPE_LIST = [['VIP Box'], ['Upper Grandstand'],['Middle Grandstand'], ['Lower Grandstand'], ['Upper Behind Goal'], ['Middle Behind Goal']]
 
-	validates_inclusion_of :ticket_type, :in => %["Premier League Ticket" "Champions League Ticket" "Europe League Ticket" "League Cup Ticket" "FA Cup Ticket"],
+	validates_inclusion_of :ticket_type, :in => %["VIP Box" Upper Grandstand" "Middle Grandstand" "Lower Grandstand" "Upper Behind Goal" "Middle Behind Goal"],
 	:message => "is not an option", :allow_nil => true, :allow_blank => true
 
 

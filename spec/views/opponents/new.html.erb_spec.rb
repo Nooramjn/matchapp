@@ -17,7 +17,7 @@ describe "opponents/new" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form", :action => opponents_path, :method => "post" do
       assert_select "input#opponent_name", :name => "opponent[name]"
-      assert_select "input#opponent_skill_level", :name => "opponent[skill_level]"
+      assert_select "select#opponent_skill_level", :name => "opponent[skill_level]"
       assert_select "input#opponent_home_capacity", :name => "opponent[home_capacity]"
       assert_select "input#opponent_domestic", :name => "opponent[domestic]"
       assert_select "input#opponent_rival", :name => "opponent[rival]"
