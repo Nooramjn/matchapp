@@ -10,14 +10,14 @@ describe "AuthenticationPages" do
   end
  #I added this part from 9.27 
   describe "with valid information" do
-      let(:user) { FactoryGirl.create(:user) }
-      before { sign_in user }
+      let(:fan) { FactoryGirl.create(:fan) }
+      before { sign_in fan }
 
-      it { should have_selector('title', text: user.name) }
+      it { should have_selector('title', text: fan.name) }
 
-      it { should have_link('Users',    href: users_path) }
-      it { should have_link('Profile',  href: user_path(user)) }
-      it { should have_link('Settings', href: edit_user_path(user)) }
+      it { should have_link('Fans',    href: fans_path) }
+      it { should have_link('Profile',  href: fan_path(fan)) }
+      it { should have_link('Settings', href: edit_fan_path(fan)) }
       it { should have_link('Sign out', href: signout_path) }
 
       it { should_not have_link('Sign in', href: signin_path) }
@@ -102,7 +102,7 @@ describe "authorization" do
         end
 
         describe "submitting to the update action" do
-          before { put user_path(fan) }
+          before { put fan_path(fan) }
           specify { response.should redirect_to(signin_path) }
         end
         

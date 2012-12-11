@@ -7,14 +7,14 @@ describe Match do
   end
   
   it "should have valid attributes" do
-  	should validate_presence_of(:match_type)
-  	should validate_presence_of(:home)
+  	#should validate_presence_of(:match_type)
+  	#should validate_presence_of(:home)
   	should validate_presence_of(:opponent_id)
   end
   
   describe "create our factories" do
   	before (:each) do
-  		@match1= FactoryGirl.create(:match)
+  		@match1= FactoryGirl.create(:match,:match_type =>"Eurpoe League", :opponent_id =>2)
   		@match2=FactoryGirl.create(:match,:match_type =>"Friendly", :opponent_id =>1)
   		@opponent1=FactoryGirl.create(:opponent, :name=>"GOS", :skill_level=>"Moderate", :home_capacity=>"5543", :domestic=> true, :rival=>false)
   		@opponent2=FactoryGirl.create(:opponent)

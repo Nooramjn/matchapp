@@ -1,7 +1,9 @@
 class FansController < ApplicationController
 
 before_filter :signed_in_fan, only: [:index,:edit, :update]
-before_filter :correct_fan,   only: [:edit, :update]
+before_filter :correct_fan, only: [:edit, :update]
+before_filter :admin_fan, only: :destroy
+
 
   # GET /fans
   # GET /fans.json

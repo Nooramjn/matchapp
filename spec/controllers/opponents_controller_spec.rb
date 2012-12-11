@@ -24,9 +24,11 @@ describe OpponentsController do
   # Opponent. As you add validations to Opponent, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { :name => "UCI", :skill_level=> "moderate", :home_capacity=> 5566,
+    { :name => "UCI",:home_capacity=> 5566}
+    #:skill_level=> "moderate",
+    
 
-    :domestic => 'true', :rival => 'true'}
+    #,:domestic => 'true', :rival => 'true'}
 
     #:domestic => false, :rival => false}
 

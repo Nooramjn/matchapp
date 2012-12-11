@@ -14,7 +14,7 @@ describe "matches/new" do
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form", :action => matches_path, :method => "post" do
-      assert_select "input#match_match_type", :name => "match[match_type]"
+      assert_select "select#match_match_type", :name => "match[match_type]"
       assert_select "input#match_home", :name => "match[home]"
       assert_select "input#match_opponent_id", :name => "match[opponent_id]"
     end
