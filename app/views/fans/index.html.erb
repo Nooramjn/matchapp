@@ -14,14 +14,16 @@
   <tr>
     <td><%= fan.name %></td>
     <td><%= fan.email %></td>
-    <td><%= link_to 'Show', fan %></td>
-    <td><%= link_to 'Edit', edit_fan_path(fan) %></td>
-    <td><%= link_to 'Destroy', fan, confirm: 'Are you sure?', method: :delete %></td>
+    <% if current_fan.admin? %>
+      <td><%=fan.admin %></td>
+      <td><%= link_to 'Show', fan %></td>
+      <td><%= link_to 'Edit', edit_fan_path(fan) %></td>
+      <td><%= link_to 'Destroy', fan, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'Sign up', new_fan_path %>
 

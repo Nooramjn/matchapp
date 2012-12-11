@@ -4,14 +4,13 @@ class Match < ActiveRecord::Base
 	has_many :tickets
 	belongs_to :opponent
 
-	validates :home , :presence =>true 
 	validates :opponent_id, :presence =>true 
 
 
 
-	match_type_list = [['Premier League','PL'], ['Champions League', 'CL'],['Europe League', 'EL'], ['League Cup', 'LC'], ['FA Cup', 'FA']]
+	MATCH_TYPE_LIST = [['Premier League'], ['Champions League'],['Europe League'], ['League Cup'], ['FA Cup']]
 
-	validates_inclusion_of :match_type, :in => %[PL CL EL LC FA ], 
+	validates_inclusion_of :match_type, :in => %["Premier League" "Champions League" "Europe League" "League Cup" "FA Cup" ], 
 	:message => "is not an option", :allow_nil => true, :allow_blank => true
 
 end

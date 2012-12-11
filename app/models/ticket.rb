@@ -10,9 +10,9 @@ class Ticket < ActiveRecord::Base
 	validates :match_id, :presence =>true 
 
 
-	ticket_type_list = [['Premier League Ticket','PLT'], ['Champions League Ticket', 'CLT'],['Europe League Ticket', 'ELT'], ['League Cup Ticket', 'LCT'], ['FA Cup Ticket', 'FAT']]
+	TICKET_TYPE_LIST = [['Premier League Ticket'], ['Champions League Ticket'],['Europe League Ticket'], ['League Cup Ticket'], ['FA Cup Ticket']]
 
-	validates_inclusion_of :ticket_type, :in => %[PLT CLT ELT LCT FAT],
+	validates_inclusion_of :ticket_type, :in => %["Premier League Ticket" "Champions League Ticket" "Europe League Ticket" "League Cup Ticket" "FA Cup Ticket"],
 	:message => "is not an option", :allow_nil => true, :allow_blank => true
 
 

@@ -18,7 +18,7 @@ module SessionsHelper
     @current_fan ||= Fan.find_by_remember_token(cookies[:remember_token])
     end
 	def current_fan?(fan)
-    fan == current_fan
+    fan.id == current_fan.id
   	end
 
 

@@ -1,4 +1,4 @@
-<h1>Listing tickets</h1>
+<h1>Tickets</h1>
 
 <table>
   <tr>
@@ -15,8 +15,8 @@
   <tr>
     <td><%= ticket.quantity %></td>
     <td><%= ticket.ticket_type %></td>
-    <td><%= ticket.fan_id %></td>
-    <td><%= ticket.match_id %></td>
+    <td><%= ticket.fan.name %></td>
+    <td><%= ticket.match.match_type %></td>
     <td><%= link_to 'Show', ticket %></td>
     <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
     <td><%= link_to 'Destroy', ticket, confirm: 'Are you sure?', method: :delete %></td>
@@ -26,4 +26,4 @@
 
 <br />
 
-<%= link_to 'New Ticket', new_ticket_path %>
+<%= link_to 'Buy Ticket', new_ticket_path %>

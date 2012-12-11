@@ -1,4 +1,4 @@
-<h1>Listing opponents</h1>
+<h1>List of Opponents</h1>
 
 <table>
   <tr>
@@ -18,14 +18,17 @@
     <td><%= opponent.skill_level %></td>
     <td><%= opponent.home_capacity %></td>
     <td><%= opponent.domestic %></td>
-    <td><%= opponent.rival %></td>
+    <td><%= opponent.rival %></td
+    <% if admin_fan %>
     <td><%= link_to 'Show', opponent %></td>
     <td><%= link_to 'Edit', edit_opponent_path(opponent) %></td>
     <td><%= link_to 'Destroy', opponent, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'New Opponent', new_opponent_path %> </td>
+
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Opponent', new_opponent_path %>

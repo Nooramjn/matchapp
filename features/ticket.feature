@@ -32,11 +32,11 @@ Scenario: View webmaster information in footer
 
 Scenario: View About Us information in footer
 	Given I go to the home page
-	Then I should see "About Us" in the "footer"
+	Then I should see "About" in the "footer"
 
 Scenario: View Contact Us information in footer
 	Given I go to the home page
-	Then I should see "Contact Us" in the "footer"
+	Then I should see "Contact" in the "footer"
 
 Scenario: View Privacy Policy information in footer
 	Given I go to the home page
@@ -45,20 +45,17 @@ Scenario: View Privacy Policy information in footer
 
  Scenario: List matches
   Given I am on the 'matches' page
-  Then I should see "Manchester United FC | Matches" in the "title"
+  Then I should see " Manchester United FC | Matches" in the "title"
   And I should see "LISTING MATCHES" in the "h1"
   And I should see "match type" in the "th"
   And I should see "Home" in the "th"
   And I should see "Opponent" in the "th"
-  And I should see "2012-11-21" in the "td"
-  And I should see "walk my dog" in the "td"
-And I should see "noora" in the "td"
-    And I should see a link to "New Message" in the "a"
+  And I should see a link to "Buy Tickets" in the "a"
     
 Scenario: Creating a new match
 	Given I am on the 'new match' page
 	When I select "Friendly" for "match_type"
-	When I select false for "home"
+	When I check "Domestic"
   And I click on "submit" button 
 	Then I should see "Match was successfully created." in the "p#notice"
 	
@@ -110,3 +107,28 @@ Scenario: Delete fan
     Given I am on the 'fans' page
     When I follow the "Destroy" link for "Sarah"
     Then I should not see "Sarah"
+
+
+
+Scenario: List Ticket
+  Given I am on the 'ticket' page
+  Then I should see "Manchester United FC | Ticket" in the "title"
+  And I should see "LISTING TICKETS" in the "h1"
+  And I should see "Quantity" in the "th"
+  And I should see "Ticket type" in the "th"
+  And I should see "Fan" in the "th"
+  And I should see "Match" in the "th"
+  And I should see "1" in the "td"
+  And I should see "Middle Grandstand" in the "td"
+  And I should see "Sarah" in the "td"
+  And I should see "Friendly" in the "td"
+  And I should see a link to "New Ticket" in the "a"
+    
+Scenario: Creating a new Ticket
+  Given I am on the 'new Ticket' page
+  When I enter "1" for "Quantity"
+  And I select "VIP Box" for "Ticket type"
+  And I select "VIP Box" for "Ticket type"
+    
+
+

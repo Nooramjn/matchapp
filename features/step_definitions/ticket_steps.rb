@@ -41,27 +41,24 @@ Then /^I should see a link to "(.*?)" in the "(.*?)"$/ do |linkname, arg2|
 end
 
 Given /^I am on the 'new match' page$/ do
-  pending # express the regexp above with the code you wish you had
+ visit new_match_path
 end
 
-When /^I select "(.*?)" for "(.*?)"$/ do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+When /^I select "(.*?)" for "(.*?)"$/ do |value, selectbox|
+  select value, :from =>selectbox
 end
 
-When /^I select false for "(.*?)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
 
 When /^I click on "(.*?)" button$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+ click_button(arg1)
 end
 
 Given /^I am on the 'match' page$/ do
-  pending # express the regexp above with the code you wish you had
+  visit matches_path
 end
 
-When /^I follow the "(.*?)" link for "(.*?)"$/ do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+When /^I follow the "(.*?)" link for "(.*?)"$/ do |link, cell_value|
+  find(:xpath, "//td[contains(.,'#{cell_value}')]").click_link link
 end
 
 When /^I change the subject "(.*?)" to "(.*?)"$/ do |arg1, arg2|
@@ -69,22 +66,28 @@ When /^I change the subject "(.*?)" to "(.*?)"$/ do |arg1, arg2|
 end
 
 Given /^I am on the 'fans' page$/ do
-  pending # express the regexp above with the code you wish you had
+visit fans_path
 end
 
 Given /^I am on the 'new fans' page$/ do
-  pending # express the regexp above with the code you wish you had
+visit new_fan_path
 end
 
-When /^I enter "(.*?)" for "(.*?)" box$/ do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+When /^I enter "(.*?)" for "(.*?)" box$/ do |input, label|
+  fill_in(label, :with => input)
 end
 
-Given /^I am on the 'walkers' page$/ do
-  pending # express the regexp above with the code you wish you had
+When /^I check "(.*?)"$/ do |arg1|
+check arg1
 end
 
-When /^I change the Name "(.*?)" to "(.*?)"$/ do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+Given /^I am on the 'ticket' page$/ do
+  visit tickets_path
+
 end
+
+Given /^I am on the 'new Ticket' page$/ do
+  visit new_ticket_path
+end
+
 
