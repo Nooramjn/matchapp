@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Fan do
   before { @fan = Fan.new(name: "Example User", email: "user@example.com",
-  password: "foobar", password_confirmation: "foobar") }
+  password: "foobar123", password_confirmation: "foobar123") }
 
   subject { @fan }
 

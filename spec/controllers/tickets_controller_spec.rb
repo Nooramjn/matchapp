@@ -25,9 +25,8 @@ describe TicketsController do
   # update the return value of this method accordingly.
   def valid_attributes
 
-    { :quantity => 1, :ticket_type => 1, :fan_id => 1, :match_id => 1 }
-
-   # { :quantity => 1, :type => 1, :fan_id => 1, :match_id => 1 }
+    { :quantity => 1, :fan_id => 1, :match_id => 1 }
+    #:ticket_type => 1,
 
   end
 

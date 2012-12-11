@@ -26,7 +26,9 @@ describe MatchesController do
   def valid_attributes
 
 
-    { :match_type => "friendly", :home => 'true', :opponent_id => 1 }
+    { :match_type =>"friendly",:opponent_id => 1 }
+    #:home => 'true',
+    
 
     #{ :match_type => "friendly", :home => false, :opponent_id => 1 }
 
