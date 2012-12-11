@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
-  before_filter :signed_in_fan, only: [:new,:edit, :update]
-  before_filter :correct_fan,   only: [:edit, :update]
+  before_filter :signed_in_fan, only: [:destroy, :new,:edit, :update]
+  before_filter :correct_fan,   only: [:destroy, :edit, :update]
   # GET /tickets
   # GET /tickets.json
   def index
