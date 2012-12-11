@@ -76,16 +76,16 @@ end
   describe "return value of authenticate method" do
 
     before { @fan.save }
-    let(:found_user) { Fan.find_by_email(@fan.email) }
+    let(:found_fan) { Fan.find_by_email(@fan.email) }
 
     describe "with valid password" do
-      it { should == found_user.authenticate(@fan.password) }
+      it { should == found_fan.authenticate(@fan.password) }
     end
 
     describe "with invalid password" do
-      let(:fan_for_invalid_password) { found_user.authenticate("invalid") }
+      let(:fan_for_invalid_password) { found_fan.authenticate("invalid") }
 
-      it { should_not == user_for_invalid_password }
+      it { should_not == fan_for_invalid_password }
       specify { fan_for_invalid_password.should be_false }
     end
   end

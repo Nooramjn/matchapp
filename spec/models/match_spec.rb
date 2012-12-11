@@ -7,7 +7,7 @@ describe Match do
   end
   
   it "should have valid attributes" do
-  	should validate_presence_of(:match_type)
+  	#should validate_presence_of(:match_type)
   	#should validate_presence_of(:home)
   	should validate_presence_of(:opponent_id)
   end

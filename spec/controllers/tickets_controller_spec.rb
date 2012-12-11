@@ -24,7 +24,7 @@ describe TicketsController do
   # Ticket. As you add validations to Ticket, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-
+    
     { :quantity => 1, :fan_id => 1, :match_id => 1 }
     #:ticket_type => 1,
 
